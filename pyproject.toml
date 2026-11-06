@@ -1,0 +1,44 @@
+# References:
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+# https://packaging.python.org/en/latest/guides/packaging-namespace-packages/#native-namespace-packages
+# https://packaging.python.org/en/latest/guides/single-sourcing-package-version/
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
+[project]
+name = "freecad-auto_hexfill"
+description = "Parametric read-only hex-fill sketches bound to a boundary sketch."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE-Assets", "LICENSE-Code"]
+maintainers = [{ name = "me", email = "me@foobar.com" }]
+dynamic = ["version"]
+dependencies = [
+    "freecad-hexfill>=1.2.5",
+]
+
+[project.urls]
+source = "https://github.com/me/freecad-auto-hexfill"
+
+[dependency-groups]
+dev = [
+    "PySide6",
+    "codespell",
+    "freecad-stubs>=1.0.21",
+    "freecad-typings",
+    "ruff",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "freecad/auto_hexfill/version.py"
+# Hatchling looks for __version__ = "..." by default
+
+[tool.hatch.build.targets.wheel]
+packages = ["freecad"]
+
+[tool.uv.sources]
+freecad-hexfill = { git = "https://github.com/Clientik/FreeCAD-HexFill", tag = "v1.2.5" }

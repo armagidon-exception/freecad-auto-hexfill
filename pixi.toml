@@ -1,0 +1,16 @@
+[project]
+authors = ["me <me@foobar.com>"]
+channels = ["freecad/label/dev", "conda-forge"]
+description = "Parametric read-only hex-fill sketches bound to a boundary sketch."
+name = "freecad.auto_hexfill"
+platforms = ["osx-arm64", "linux-aarch64", "linux-64", "win-64", "osx-64"]
+version = "0.1.0"
+
+[pypi-dependencies]
+freecad-auto_hexfill = { path = ".", editable = true }
+
+[tasks]
+test = "freecadcmd tests/run_tests.py"
+
+[dependencies]
+freecad = ">=1.0.0,<2"
