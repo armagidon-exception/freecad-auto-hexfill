@@ -56,7 +56,7 @@ class ParametricHexFillCommand:
 
     def GetResources(self) -> dict[str, str]:
         return {
-            "Pixmap": Resources.icon("auto_hexfill.svg"),
+            "Pixmap": Resources.icon("command_hexfill.svg"),
             "MenuText": translate("auto_hexfill", "Create parametric HexFill"),
             "ToolTip": translate(
                 "auto_hexfill",

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect x="7" y="9" width="50" height="46" rx="4" fill="#f4fafd" stroke="#426b82" stroke-width="2.5"/>
+  <path d="M13 15 H51" stroke="#8bb7cc" stroke-width="1.5" stroke-linecap="round"/>
+  <defs>
+    <path id="hex" d="M 6 0 L 3 5.196 L -3 5.196 L -6 0 L -3 -5.196 L 3 -5.196 Z"
+          fill="#55b4e6" stroke="#1c648b" stroke-width="1.1" stroke-linejoin="round"/>
+  </defs>
+  <use href="#hex" transform="translate(24 27)"/>
+  <use href="#hex" transform="translate(33 27)"/>
+  <use href="#hex" transform="translate(42 27)"/>
+  <use href="#hex" transform="translate(28.5 32.2)"/>
+  <use href="#hex" transform="translate(37.5 32.2)"/>
+  <use href="#hex" transform="translate(24 37.4)"/>
+  <use href="#hex" transform="translate(33 37.4)"/>
+  <use href="#hex" transform="translate(42 37.4)"/>
+</svg>

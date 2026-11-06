@@ -16,7 +16,7 @@ class HexFillViewProvider:
         vobj.Proxy = self
 
     def getIcon(self) -> str:
-        return Resources.icon("auto_hexfill.svg")
+        return Resources.icon("sketch_hexfill.svg")
 
     def setEdit(self, vobj: Any, mode: int) -> bool:
         return False
