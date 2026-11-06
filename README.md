@@ -13,7 +13,7 @@ The generated sketch keeps a live link to its boundary sketch. When the boundary
 
 1. Draw a sketch containing at least one closed contour.
 2. Select that sketch in the Sketcher workbench.
-3. Run **Create parametric HexFill** from the Sketcher toolbar or menu.
+3. Run **Create parametric HexFill** from the default Sketcher toolbar or the **Sketch** menu.
 4. Select the generated sketch and adjust `Auto`, `Diameter`, `Gap`, `Outfill`, `Orientation`, or the anchor in the Data tab.
 5. Recompute the document after changing the boundary.
 

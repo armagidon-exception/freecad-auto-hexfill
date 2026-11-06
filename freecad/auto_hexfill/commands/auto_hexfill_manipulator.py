@@ -16,7 +16,10 @@ from .parametric_hexfill_command import ParametricHexFillCommand
 class WorkbenchManipulator:
     """Add the parametric hex-fill command to the Sketcher workbench."""
 
-    TARGET_WB: ClassVar[str] = "SketcherWorkbench"
+    TARGET_WB_ALIASES: ClassVar[tuple[str, ...]] = (
+        "SketcherWorkbench",
+        "Sketcher",
+    )
     _instance: ClassVar[WorkbenchManipulator | None] = None
 
     def _wanted(self) -> bool:
@@ -24,7 +27,7 @@ class WorkbenchManipulator:
             active = Gui.activeWorkbench()
             for name, workbench in Gui.listWorkbenches().items():
                 if workbench is active:
-                    return name == self.TARGET_WB
+                    return name in self.TARGET_WB_ALIASES
         except Exception:
             pass
         return False
@@ -32,7 +35,7 @@ class WorkbenchManipulator:
     def modifyToolBars(self) -> list[dict[str, str]]:
         if not self._wanted():
             return []
-        return [{"append": ParametricHexFillCommand.Name, "toolBar": "Structure"}]
+        return [{"append": ParametricHexFillCommand.Name, "toolBar": "Sketcher"}]
 
     def modifyMenuBar(self) -> list[dict[str, str]]:
         if not self._wanted():
@@ -40,7 +43,7 @@ class WorkbenchManipulator:
         return [
             {
                 "insert": ParametricHexFillCommand.Name,
-                "menuItem": "Std_DlgCustomize",
+                "menuItem": "Sketcher_MirrorSketch",
                 "after": "1",
             }
         ]
